@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Right Wrong</title>
+    <style>
+        body {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            color: red;
+            margin-top: 3em;
+            font-size: 4rem;
+        }
+
+        .container {
+            text-align: center;
+            font-weight: bold;
+            font-size: 2em;
+
+        }
+
+        input {
+            border-radius: 5px;
+        }
+
+
+        input:hover,
+        input:active {
+            background-color: initial;
+            background-position: 0 0;
+            color: #FF4742;
+        }
+
+
+        #answer {
+            text-align: center;
+            width: 30rem;
+            height: 2rem;
+            margin: 10px;
+        }
+
+        #button {
+            width: 100px;
+            height: 30px;
+            font-weight: bold;
+            color: red;
+            background-color: aliceblue;
+        }
+
+        input {
+            border: solid black 2px;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Math question Correct Or Incorrect</h1>
+    <div class="container">
+        <div class="question">What is 10 + 10 ?</div>
+        <input type="text" id="answer" placeholder="Your Answer" required>
+        <br>
+        <button onclick="checkAnswer()" id="button">Click</button>
+    </div>
+
+
+    <script>
+        function checkAnswer() {
+
+            var userAnswer = document.getElementById('answer').value;
+
+            var correctAnswer = 20;
+
+            if (parseInt(userAnswer)) {
+                alert('Correct ! The Answer is 20.')
+            } else {
+                alert(" Incorrect! The Correct Answer is 20.")
+            }
+        };
+    </script>
+</body>
+
+</html>

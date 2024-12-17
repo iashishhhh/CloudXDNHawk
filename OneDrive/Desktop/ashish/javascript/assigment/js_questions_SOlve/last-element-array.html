@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div> Last Elements of Array
+        <br>
+        Write a JavaScript function to get the last element of an array. Passing the parameter 'n' will return the last
+        'n' elements of the array. <br>
+        <hr>
+        Test Data : <br>
+        <hr>
+        console.log(last([7, 9, 0, -2])); <br>
+        <hr>
+        console.log(last([7, 9, 0, -2],3)); <br>
+        <hr>
+        console.log(last([7, 9, 0, -2],6)); <br>
+        <hr>
+        Expected Output :
+        -2
+        [9, 0, -2]
+        [7, 9, 0, -2]
+    </div>
+
+
+    <script>
+        var last = function (array, n) {
+
+            if (array == null)
+                return  undefined;
+
+            if (n == null)
+                return array[array.length - 1];
+
+            return array.slice(Math.max(array.length - n, 0));
+        };
+        console.log(last([7, 9, 0, -2]));
+        console.log(last([7, 9, 0, -2], 3));
+        console.log(last([7, 9, 0, -2], 6));
+
+    </script>
+</body>
+
+</html>

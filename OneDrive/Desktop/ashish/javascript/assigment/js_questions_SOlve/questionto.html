@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="text-align: center;">
+    <div class="wrapper">
+        <h1>Stopwatch</h1>
+        <p><span id="seconds">00</span>: <span id="minute">00</span></p>
+        <button id="button-start">Start</button>
+        <button id="button-stop">Stop</button>
+        <button id="button-Reset">Reset</button>
+    </div>
+
+    <script>
+        window.onload = function () {
+            var seconds = 0;
+            var minutes = 0;
+            var appendSeconds = document.getElementById("seconds");
+            var appendMinutes = document.getElementById("minute");
+            var buttonStart = document.getElementById("button-start");
+            var buttonStop = document.getElementById("button-stop");
+            var buttonReset = document.getElementById("butto n-Reset");
+
+            var Interval;
+
+            buttonStart.onclick = function () {
+                clearInterval(Interval);
+                Interval = setInterval(startTimer, 10);
+            };
+
+            buttonStop.onclick = function () {
+                clearInterval(Interval);
+            };
+
+            buttonReset.onclick = function () {
+                clearInterval(Interval);
+                seconds = 0;
+                minutes = 0;
+                appendSeconds.innerHTML = "00";
+                appendMinutes.innerHTML = "00";
+            };
+            function startTimer() {
+                seconds++;
+                if (seconds <= 9) {
+                    appendSeconds.innerHTML = "0" + seconds;
+                } else {
+                    appendSeconds.innerHTML = seconds;
+                }
+
+                if (seconds > 99) {
+                    minutes++;
+                    appendMinutes.innerHTML = minutes <= 9 ? "0" + minutes : minutes;
+                    seconds = 0;
+                    appendSeconds.innerHTML = "00";
+                }
+            }
+        };
+
+    </script>
+</body>
+
+</html>

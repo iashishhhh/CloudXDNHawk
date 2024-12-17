@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dialog Name Input</title>
+
+</head>
+
+<body>
+    <div id="overlay"></div>
+    <div id="dialog">
+        <input type="text" id="nameInput" placeholder="Enter Name">
+        <button onclick="submitName()">Submit</button>
+        <input type="checkbox" id="stopCheckbox"> Stop
+    </div>
+    <script>
+        let names = [];
+
+        function submitName() {
+
+            const name = document.getElementById('nameInput').value.trim();
+            if (name) names.push(name);
+
+            if (document.getElementById('stopCheckbox').checked) {
+                alert('Names in alphabetical order: ' + names.sort());
+            }
+            else {
+                document.getElementById('nameInput').value = '';
+            }
+        };
+    </script>
+</body>
+
+</html>

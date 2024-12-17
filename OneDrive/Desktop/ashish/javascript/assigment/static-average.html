@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <h1>The Average of Integar in the alert Box!</h1>
+    <h3>numbers : 21, 23, 64, 65, 83, 94, 66, 12</h3>
+    <button onclick="averageIntegar()">Click</button>
+
+    <script>
+        function averageIntegar() {
+
+            var numbers = [21, 23, 64, 65, 83, 94, 66, 12];
+
+            var sum = 0;
+
+            for (i = 0; i < numbers.length; i++) {
+                sum += numbers[i];
+            }
+            var average = sum / numbers.length;
+
+            alert("The average of the numbers is " + average);
+        }
+        window.onload = function () {
+            averageIntegar();
+        }
+
+    </script>
+
+</body>
+
+</html>

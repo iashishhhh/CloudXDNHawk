@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Average Of Integar </title>
+
+    <style>
+        body {
+            background-color: aliceblue;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h1 {
+            color: red;
+            font-size: 4rem;
+            padding-top: 10rem;
+        }
+
+        button {
+            background-color: red;
+            color: white;
+            font-size: 3rem;
+            border: none;
+            width: 10rem;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: transparent;
+            color: red;
+            border: red solid 2px;
+        }
+
+        button:active {
+            opacity: .5;
+        }
+    </style>
+</head>
+
+
+<body>
+    <h1>The Average of Integar in the alert Box!</h1>
+    <button onclick="averageIntegar()">Click</button>
+    <script>
+        var numbers = [10, 20, 30, 40, 50, 60];
+
+        // function averageIntegar() {
+        var sum = 0;
+        // start For Loop
+        for (i = 0; i < numbers.length; i++) {
+            sum += numbers[i];
+        }
+        var average = sum / numbers.length;
+
+        alert("The average of the numbers is " + average);
+        // }
+
+        window.onload = function () {
+            averageIntegar(); 
+        }
+
+
+        document.write(){
+
+        }
+    </script>
+</body>
+
+</html>

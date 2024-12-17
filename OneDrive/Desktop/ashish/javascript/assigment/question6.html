@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name Collector</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            
+            margin: 0;
+            text-align: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        h2 {
+            color: red;
+            padding-top: 10%;
+            font-size: 4rem;
+            border-bottom: red solid 2px;
+            border-radius: 20px;
+            width: 60%;
+            position: relative;
+            left: 20%;
+        }
+
+        #result1 {
+            margin-top: 20px;
+            padding: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 2rem;
+            font-family: 'Arial Narrow Bold', sans-serif;
+            gap: 30px;
+
+        }
+
+        button {
+            background-color: red;
+            color: white;
+            font-size: 3rem;
+            border: none;
+            width: 10rem;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: transparent;
+            color: red;
+            border: red solid 2px;
+        }
+
+        button:active {
+            opacity: .5;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Alphabatical Order Names</h2>
+    <button onclick="startDialog()">Click</button>
+    <div id="result1"></div>
+
+    <script>
+        let names = [];
+
+        function startDialog() {
+            for (let step = 0; step < 5; step++) {
+                let name = prompt("Please enter your name");
+                if (name) {
+                    names.push(name);
+                }
+            }
+            names.sort();
+            document.getElementById('result1').innerHTML = names.join('<br>');
+
+        }
+    </script>
+</body>
+
+</html>

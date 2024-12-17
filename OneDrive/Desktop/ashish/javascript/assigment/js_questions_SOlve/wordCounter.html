@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, 
+                   initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="text-align: center;">
+
+
+    <textarea id="inputField" rows=10 cols="60">
+    </textarea>
+    <br><br>
+
+    <button onclick="countWords()">
+        Count Words
+    </button>
+    <br><br>
+
+    <p> Word Count:
+        <span id="show">0</span>
+    </p>
+
+    <script>
+        function countWords() {
+
+            let text = document
+                .getElementById("inputField").value;
+
+            let numWords = 0;
+
+            for (let i = 0; i < text.length; i++) {
+                let currentCharacter = text[i];
+
+                if (currentCharacter == " ") {
+                    numWords += 1;
+                }
+            }
+            numWords += 1;
+            document.getElementById("show")
+                .innerHTML = numWords;
+        }
+    </script>
+</body>
+
+</html>

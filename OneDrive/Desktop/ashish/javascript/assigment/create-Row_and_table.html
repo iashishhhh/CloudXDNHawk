@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td {
+            border: 2px black solid;
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Create Row And Col </h1>
+
+    <input type="num" id="rows" placeholder="random number">
+    <input type="num" id="cols" placeholder="random number">
+    <br><br>
+    <button onclick="createTable()">Create</button>
+    <br><br>
+    <h3>Result:</h3>
+    <div id="tableContainer"></div>
+
+
+    <script>    aewdo
+        function createTable() {
+            let row = document.getElementById("rows").value;
+            let col = document.getElementById("cols").value;
+            let table = document.createElement("table");
+
+            let container = document.getElementById('tableContainer');
+            container.innerHTML = "";
+
+            for (let i = 0; i < row; i++) {
+                let tr = document.createElement("tr");
+                for (let j = 0; j < col; j++) {
+                    let td = document.createElement("td");
+                    td.innerHTML = "a";
+                    tr.appendChild(td);
+                }
+                table.appendChild(tr);
+
+                container.appendChild(table);
+            }
+        };
+
+    </script>
+</body>
+
+</html>

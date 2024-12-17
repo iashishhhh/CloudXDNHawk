@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function Employee(firstName, lastName) {
+        //     this.firstName = firstName;
+        //     this.lastName = lastName;
+        // }
+        // Employee.prototype.fullName = function () {
+        //     return this.firstName + " " + this.lastName;
+        // }
+
+        // var employee1 = new Employee("Martin", "Roy");
+        // var employee2 = new Employee("Roy", "Martin");
+        // document.write(employee1.fullName() + "<br>");
+        // document.write(employee2.lastName());
+
+
+
+        /////////////////////////////////////////////////////////////////////////
+
+        //         Example 2
+        // Let's see an example to add a new property to the constructor function.
+
+        function Employee(name, id, salary) {
+            this.name = name;
+            this.id = id;
+            this.salary = salary;
+        }
+        Employee.prototype.fullDetail = "javavscript"
+
+        var emp1 = new Employee("Martin Roy", 102, 40000);
+        var emp2 = new Employee("ravi", 90, 90000);
+        document.write(emp1.name + " " + emp1.id + " " + emp1.fullDetail + "<br>");
+        document.write(emp2.name + " " + emp2.id + " " + emp2.salary+" " + emp2.fullDetail);
+
+    </script>
+
+</body>
+
+</html>

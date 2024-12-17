@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Math question Correct Or Incorrect</h1>
+    <div class="container">
+        <div class="question">What is 10 + 10 ?</div>
+        <input type="text" id="answer" placeholder="Your Answer" required>
+        <br>
+        <button onclick="checkAnswer()" id="button">Click</button>
+    </div>
+
+    <script>
+
+        function checkAnswer() {
+            var userAnswer = document.getElementById('answer').value;
+            var correctAnswer = 20;
+
+            if (userAnswer == correctAnswer) {
+                alert("You are correct");
+            } else {
+                alert("You are wrong");
+            }
+        }
+    </script>
+    
+</body>
+
+</html>

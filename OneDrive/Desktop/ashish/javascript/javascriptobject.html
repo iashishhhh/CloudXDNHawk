@@ -1,0 +1,46 @@
+<script>
+    function addRow() {
+        const email = document.getElementById("email").value;
+        const number = document.getElementById("number").value;
+
+        if (email && number) {
+            const table = document.getElementById("dataTable").getElementsByTagName('tbody')[0];
+            const newRow = table.insertRow();
+
+            // Insert email cell
+            const emailCell = newRow.insertCell(0);
+            emailCell.textContent = email;
+
+            // Insert number cell
+            const numberCell = newRow.insertCell(1);
+            numberCell.textContent = number;
+
+            // Insert action cell with delete and edit buttons
+            const actionCell = newRow.insertCell(2);
+            const deleteButton = document.createElement("button");
+            deleteButton.textContent = "Delete";
+            deleteButton.onclick = function () {
+                table.deleteRow(newRow.rowIndex - 1);
+            };
+
+            const editButton = document.createElement("button");
+            editButton.textContent = "Edit";
+            editButton.onclick = function () {
+                document.getElementById("email").value = emailCell.textContent;
+                document.getElementById("number").value = numberCell.textContent;
+
+                // Optional: Remove the row after editing
+                table.deleteRow(newRow.rowIndex - 1);
+            };
+
+            actionCell.appendChild(deleteButton);
+            actionCell.appendChild(editButton);
+
+            // Clear input fields
+            document.getElementById("email").value = "";
+            document.getElementById("number").value = "";
+        } else {
+            alert("Please enter both email and number.");
+        }
+    }
+</script>

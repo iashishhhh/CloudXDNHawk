@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // function Animal(name) {
+        //     this.name = name;
+        // }
+        // Animal.prototype.sound = function () {
+        //     console.log("Generic Sound");
+        // };
+        // function Dog(name, breed) {
+        //     Animal.call(this, name);
+        //     this.breed = breed;
+        // }
+        // Dog.prototype = Object.create(Animal.prototype);
+        // Dog.prototype.constructor = Dog;
+        // Dog.prototype.sound = function () {
+        //     console.log("Woof! Woof!");
+        //     document.write("Woof!","<br>","Woof!")
+        // };
+        // const myDog = new Dog("Buddy", "Pitbull");
+        // myDog.sound(); 
+
+
+        // my new function create
+        function Car(Name) {
+            this.name = Name;
+        }
+        Car.prototype.sound = function () {
+            console.log("Generic Sound");
+        };
+        function Porsche(Name, Model) {
+            Car.call(this.name);
+            this.Model = Model;
+        }
+        Car.prototype = Object.create(Car.prototype);
+        Car.prototype.constructor = Porsche;
+        Car.prototype.sound = function () {
+            console.log("broom! broom!");
+            document.write("broom! brooom!");
+        }
+        const myCar = new Car("porsche", "2024");
+        myCar.sound();
+    </script>
+
+</body>
+
+</html>

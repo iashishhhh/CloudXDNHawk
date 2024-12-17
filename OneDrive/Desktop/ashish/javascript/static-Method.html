@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>class square {
+            constructor(side) {
+                this.side = side;
+            }
+            findPerimeter() {
+                return 4 * this.side;
+            }
+            static comparePerimeter(squarea, squareb) {
+                if (squarea.side > squareb.side) {
+                    console.log("first square has more perimeter");
+                }
+                else if (squarea.side < squareb.side) {
+                    console.log("second square has more perimeter");
+                }
+                else {
+                    console.log("both have equal perimeter")
+                }
+            }
+        }
+
+        let squarea = new square(4);
+        let squareb = new square(4);
+        square.comparePerimeter(squarea, squareb);
+
+    </script>
+</body>
+
+</html>

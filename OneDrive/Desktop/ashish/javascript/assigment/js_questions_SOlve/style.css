@@ -1,0 +1,14 @@
+div {
+    font-size: 30px;
+    border-bottom: 2px dashed black;
+    border-right: 2px solid black;
+    text-align: center;
+    padding-bottom: 10px;
+    border-left: 2px solid black;
+}
+
+.sample {
+    border: none;
+    padding-top: 30px;
+}
+

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .result {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Search in Array</h1>
+
+    <input type="text" id="searchInput" placeholder="Type to search..." onkeyup="searchArray()" />
+
+    <div class="result">
+        <ul id="resultList"></ul>
+    </div>
+
+    <script>
+        // Array to be searched
+        const items = ["Apple", "Banana", "Cherry", "Date", "Elderberry", "Fig", "Grapes", "Honeydew"];
+
+        // Function to search the array
+        function searchArray() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const resultList = document.getElementById('resultList');
+            
+            // Clear the previous results
+            resultList.innerHTML = "";
+
+            // Filter the array for items that match the input
+            const results = items.filter(item => item.toLowerCase().includes(input));
+
+            // Display the results
+            results.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item;
+                resultList.appendChild(li);
+            });
+        }
+    </script>
+
+</body>
+</html>

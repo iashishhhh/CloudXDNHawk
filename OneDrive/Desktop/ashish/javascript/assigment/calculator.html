@@ -1,0 +1,104 @@
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>calculator with eval method</title>
+        <style>
+            body {
+                /* background-color: aliceblue; */
+                text-align: center;
+                justify-content: center;
+            }
+
+            .container {
+                width: 25%;
+                height: 550px;
+                left: 35%;
+                border-radius: 5px;
+                position: relative;
+                text-align: center;
+                justify-content: center;
+                background-color: white;
+                box-shadow: 1px 10px 20px black;
+                align-items: center;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+                padding-top: 20px;
+                text-transform: uppercase;
+            }
+
+            #calc {
+                width: 55%;
+                height: 50px;
+                font-size: 2rem;
+                border-radius: 5px;
+                border: black 2px solid;
+            }
+
+            .button {
+                color: white;
+                background-color: rgb(167, 166, 166);
+                height: 40px;
+                width: 10%;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                border: none;
+                font-size: 25px;
+                margin: 9px;
+                border-radius: 10%;
+            }
+
+            .clearall {
+                border-radius: 5px;
+                color: white;
+                background-color: rgb(167, 166, 166);
+                border: none;
+                height: 30px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>calculator</h1>
+            <div class="formstyle"></div>
+            <form name="form1">
+                <input id="calc" type="text" name="answer"><br><br>
+                <div class="inputs">
+                    <input type="button" class="button" value="1" onclick="form1.answer.value +='1' ">
+                    <input type="button" class="button" value="2" onclick="form1.answer.value +='2' ">
+                    <input type="button" class="button" value="3" onclick="form1.answer.value +='3' ">
+                    <input type="button" class="button" value="+" onclick="form1.answer.value +='+' ">
+                    <br><br>
+
+                    <input type="button" class="button" value="4" onclick="form1.answer.value +='4' ">
+                    <input type="button" class="button" value="5" onclick="form1.answer.value +='5' ">
+                    <input type="button" class="button" value="6" onclick="form1.answer.value +='6' ">
+                    <input type="button" class="button" value="-" onclick="form1.answer.value +='-' ">
+                    <br><br>
+
+                    <input type="button" class="button" value="7" onclick="form1.answer.value +='7' ">
+                    <input type="button" class="button" value="8" onclick="form1.answer.value +='8' ">
+                    <input type="button" class="button" value="9" onclick="form1.answer.value +='9' ">
+                    <input type="button" class="button" value="*" onclick="form1.answer.value +='*' ">
+                    <br><br>
+
+                    <input type="button" class="button" value="/" onclick="form1.answer.value +='/' ">
+                    <input type="button" class="button" value="0" onclick="form1.answer.value +='0' ">
+                    <input type="button" class="button" value="," onclick="form1.answer.value +=',' ">
+                    <input type="button" class="button" value="=" onclick="form1.answer.value =eval(form1.answer.value)">
+
+                    <br><br>
+                    <input type="button" class="clearall" value="clear All" onclick="form1.answer.value ='' " id="clear">
+                    <br>
+                </div>
+        </div>
+        </form>
+    </body>
+
+    </html>

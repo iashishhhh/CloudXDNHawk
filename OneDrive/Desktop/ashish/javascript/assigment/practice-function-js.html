@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function countVowels(str) {
+            let count = 0;
+            for (const char of str) {
+                if (char === "a" ||
+                    char === "e" ||
+                    char === "i" ||
+                    char === "o" ||
+                    char === "u"
+                ) {
+                    count++;
+                }
+            }
+            return count;
+        }
+
+
+
+        // count same function with arrow
+        const countVowels = (str) => {
+            let count = 0;
+            for (const char of str) {
+                if (char === "a" ||
+                    char === "e" ||
+                    char === "i" ||
+                    char === "o" ||
+                    char === "u"
+                ) {
+                    count++;
+                }
+            }
+            return count;
+        }
+
+
+        // print square value
+        let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        nums.forEach(num => {
+            console.log(num * num);
+        });
+
+
+        // array marks studnt
+        let marks = [97, 65, 32, 49, 99, 96, 86];
+
+        let toppers = marks.filter((val) => {
+            return val > 90;
+        });
+        console.log(toppers);
+
+        // next question
+
+        let n = prompt("Enter a number : ");
+
+        let arr = [];
+
+        for (let i = 1; i <= n; i++) {
+            arr[i - 1] = i;
+        }
+        console.log(arr);
+    </script>
+</body>
+
+</html>

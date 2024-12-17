@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        input {
+            margin: 5px;
+        }
+
+        button {
+            margin-top: 10px;
+        }
+
+        .result {
+            margin-top: 2em;
+            background-color: aliceblue;
+            height: 50px;
+            width: 30%;
+            text-align: center;
+            position: absolute;
+            padding-top: 30px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Grade Calculator</h1>
+
+    <label for="marks">Enter your marks:</label>
+    <input id="marks" min="0" max="100" placeholder="Marks out of 100" />
+
+    <button onclick="calculateGrade()">Get Grade</button>
+
+    <div class="result" id="result"></div>
+
+    <script>
+        function calculateGrade() {
+            let marks = document.getElementById("marks").value;
+            let grade = "";
+
+            if (marks >= 90) {
+                grade = "A+";
+            } else if (marks >= 80) {
+                grade = "A";
+            } else if (marks >= 70) {
+                grade = "B+";
+            } else if (marks >= 60) {
+                grade = "B";
+            } else if (marks >= 50) {
+                grade = "C";
+            } else {
+                grade = "F";
+            }
+
+            document.getElementById("result").textContent = "Your grade is: " + grade;
+        }
+    </script>
+
+</body>
+
+</html>

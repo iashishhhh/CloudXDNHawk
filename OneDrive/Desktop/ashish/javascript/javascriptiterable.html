@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Set Methods Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>JavaScript Set Methods Example</h1>
+
+    <label for="itemInput">Enter a value to add to the Set:</label>
+    <input type="text" id="itemInput" placeholder="Type a value here">
+    <button onclick="addItem()">Add Item</button>
+    <button onclick="deleteItem()">Delete Item</button>
+    <button onclick="checkItem()">Check Item</button>
+
+    <div id="output">Current Set: <span id="setDisplay"></span></div>
+
+    <script>
+        // Create a new Set
+        const mySet = new Set();
+
+        // Function to display the Set
+        function displaySet() {
+            const setDisplay = document.getElementById('setDisplay');
+            setDisplay.textContent = Array.from(mySet).join(', ');
+        }
+
+        // Add item to the Set
+        function addItem() {
+            const item = document.getElementById('itemInput').value;
+            if (item) {
+                mySet.add(item);
+                displaySet();
+            }
+        }
+
+        // Delete item from the Set
+        function deleteItem() {
+            const item = document.getElementById('itemInput').value;
+            if (item && mySet.has(item)) {
+                mySet.delete(item);
+                displaySet();
+            } else {
+                alert(item + " not found in the Set.");
+            }
+        }
+
+        // Check if item exists in the Set
+        function checkItem() {
+            const item = document.getElementById('itemInput').value;
+            if (mySet.has(item)) {
+                alert(item + " exists in the Set.");
+            } else {
+                alert(item + " does not exist in the Set.");
+            }
+        }
+
+        // Initial display of the empty Set
+        displaySet();
+    </script>
+
+</body>
+
+</html>
+
