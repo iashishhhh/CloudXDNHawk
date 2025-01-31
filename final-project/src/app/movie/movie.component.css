@@ -1,0 +1,22 @@
+.movie-card {
+    width: 200px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+}
+
+.hide-scroll {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.hide-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.card {
+    border: none;
+}

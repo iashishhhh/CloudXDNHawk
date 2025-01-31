@@ -1,0 +1,71 @@
+<section class=" login-container">
+    <div class="container ">
+        <div class="row d-flex justify-content-center ">
+            <div class="col-lg-6 col-md-10 col-sm-12 rounded-5 shadow mx-auto glassmorphism " id="loginform">
+                <div class="p-3 p-md-4 p-lg-5">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="mb-5">
+                                <h3 class="text-uppercase  fs-1"><a href=""
+                                        class="text-decoration-none text-black  fw-bolder NAME">ROTTEN POTATOES</a>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <form action="" id="loginForm">
+                        <div class="row gy-3 gy-md-4 overflow-hidden">
+                            <div class="col-12">
+                                <label for="email" class="form-label fw-bold">UserName <span
+                                        class="text-danger">*</span></label>
+                                <input type="email" class="form rounded shadow py-2 px-2 w-100" name="email" id="email"
+                                    placeholder="Enter your Email" [(ngModel)]="username">
+                            </div>
+                            <div class="col-12">
+                                <label for="password" class="form-label fw-bold">
+                                    Password <span class="text-danger">*</span>
+                                </label>
+                                <div class="col-12 position-relative">
+                                    <input type="password" name="password" id="password"
+                                        class="form rounded shadow py-2 px-2 w-100" placeholder="Enter your password"
+                                        [(ngModel)]="password">
+                                    <button type="button" id="togglePassword" style="cursor: pointer;">
+                                        👁️
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center">
+                                    <div class="form-check p-0">
+                                        <input type="checkbox" id="checkbox" name="checkbox" class="checkbox">
+                                        <label class="form-check-label text-black ps-1" for="checkbox">Remember
+                                            me</label>
+                                    </div>
+                                    <a href="forget-password.html"
+                                        class="text-end text-decoration-none mt-2 mt-sm-0">Forgot password?</a>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="error" >{{errorMsg}}</div>
+                                <div class="d-grid">
+                                    <button class="btn btn-success  py-2 " routerLink="home"  type="submit" (click)="login()">Log in
+                                        now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <hr class="mt-5 mb-4 border-secondary-subtle">
+                            <div class="text-end d-flex justify-content-end">
+                                <p class="text-center fw-bold">Don't have an account? <a href="signup.html"
+                                        class="fw-bold text-decoration-none">Signup</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
