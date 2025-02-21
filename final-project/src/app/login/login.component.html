@@ -28,16 +28,18 @@
                                     <input type="password" name="password" id="password"
                                         class="form rounded shadow py-2 px-2 w-100" placeholder="Enter your password"
                                         [(ngModel)]="password">
-                                    <button type="button" id="togglePassword" style="cursor: pointer;">
+                                    <button type="button" id="togglePassword" style="cursor: pointer;"
+                                        (click)="togglePasswordVisibility($event)">
                                         👁️
                                     </button>
                                 </div>
+
                             </div>
                             <div class="col-12">
                                 <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center">
                                     <div class="form-check p-0">
                                         <input type="checkbox" id="checkbox" name="checkbox" class="checkbox">
-                                        <label class="form-check-label text-black ps-1" for="checkbox">Remember
+                                        <label class="form-check-label text-primary ps-1" for="checkbox">Remember
                                             me</label>
                                     </div>
                                     <a href="forget-password.html"
@@ -46,15 +48,15 @@
                             </div>
 
                             <div class="col-12">
-                                <div class="error" >{{errorMsg}}</div>
+                                <div class="error">{{errorMsg}}</div>
                                 <div class="d-grid">
-                                    <button class="btn btn-success  py-2 " routerLink="home"  type="submit" (click)="login()">Log in
+                                    <button class="btn btn-success  py-2 " routerLink="home" type="submit"
+                                        (click)="login()">Log in
                                         now</button>
                                 </div>
                             </div>
                         </div>
                     </form>
-
                     <div class="row">
                         <div class="col-12">
                             <hr class="mt-5 mb-4 border-secondary-subtle">
