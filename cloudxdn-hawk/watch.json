@@ -1,0 +1,79 @@
+{
+  "users": [
+    {
+      "id": "10ba",
+      "name": "ashish",
+      "email": "radhika@yopmail.com",
+      "password": "123456@12",
+      "companyName": "anviam",
+      "phone": "1234567890",
+      "companyemail": "anviam@gmail.com"
+    },
+    {
+      "id": "30c5",
+      "name": "ashish",
+      "email": "anviam@gmail.com",
+      "confirmEmail": "anviam@gmail.com",
+      "password": "ashish",
+      "confirmPassword": "ashish",
+      "companyName": "anviam",
+      "phone": "1234567890",
+      "companyemail": "anviam@gmail.com"
+    },
+    {
+      "id": "3ad0",
+      "name": "ashish",
+      "phone": "1234567890",
+      "companyName": "anviam private Limited",
+      "email": "ashish@gmail.com",
+      "confirmEmail": "ashish@gmail.com",
+      "password": "Ashish@2001",
+      "confirmPassword": "Ashish@2001",
+      "terms": true
+    },
+    {
+      "id": "147b",
+      "name": "abhinav",
+      "phone": "9876543210",
+      "companyName": "anviam",
+      "email": "abhinav@gmail.com",
+      "confirmEmail": "abhinav@gmail.com",
+      "password": "Abhinav@12",
+      "confirmPassword": "Abhinav@12",
+      "terms": true
+    },
+    {
+      "id": "ae5e",
+      "name": "Gurpreet",
+      "phone": "4125789635",
+      "companyName": "nnnnn",
+      "email": "gurpeet@gmail.com",
+      "confirmEmail": "gurpeet@gmail.com",
+      "password": "Gurpreet@12",
+      "confirmPassword": "Gurpreet@12",
+      "terms": true
+    },
+    {
+      "id": "9aa1",
+      "name": "rishi",
+      "phone": "9191919191",
+      "companyName": "aaaaa",
+      "email": "rishi@gmail.com",
+      "confirmEmail": "rishi@gmail.com",
+      "password": "123456A@",
+      "confirmPassword": "123456A@",
+      "terms": true
+    },
+    {
+      "id": "9b0b",
+      "name": "Ashish chaudhary",
+      "phone": "9816578453",
+      "companyName": "anviam private",
+      "email": "ashish12@gmail.com",
+      "confirmEmail": "ashish12@gmail.com",
+      "password": "ashish@12",
+      "confirmPassword": "ashish@12",
+      "terms": true
+    }
+  ]
+}

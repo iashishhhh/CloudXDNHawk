@@ -1,0 +1,345 @@
+<div class="container-fluid py-3">
+  <div class="d-flex justify-content-between align-items-center flex-wrap mb-3">
+    <div class="d-flex flex-wrap align-items-center mb-1">
+      <h4 class="mb-0 me-3 flex-grow-1 flex-md-grow-0">Overview</h4>
+
+      <!-- Dropdown -->
+      <div class="dropdown mt-2 mt-md-0 ">
+        <button (click)="toggleDropdown2()"
+          class="border px-3 py-2 btn-success shadow bg-white rounded-4 btn-light dropdown-toggle w-100 w-md-auto"
+          type="button" id="vendorDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+          All Cloud Vendor Accounts
+        </button>
+        <ul class="dropdown-menu" id="dropdown-menu" aria-labelledby="vendorDropdown" [class.show]="isOpen2">
+          <li><a class="dropdown-item " href="#">AWS Accounts</a></li>
+          <li><a class="dropdown-item" href="#">Azure Accounts</a></li>
+          <li><a class="dropdown-item" href="#">GCP Accounts</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="dropdown  border-0 ">
+      <button (click)="toggleDropdown()" class="pro-btn py-2 border-0 text-white rounded-4   dropdown-toggle">Profile<i
+          class="ms-2 bi bi-chevron-down"></i>
+      </button>
+      
+      <div class="dropdown-menu " [class.show]="isOpen">
+        <button class="dropdown-item disabled"><strong>Name:</strong> {{ user.name }}</button>
+        <button class="dropdown-item disabled"><strong>Email:</strong> {{ user.email }}</button>
+        <button class="dropdown-item disabled"><strong>Phone:</strong> {{ user.phone }}</button>
+        <button class="dropdown-item disabled"><strong>Company:</strong> {{ user.companyName }}</button>
+        <div class="dropdown-divider"></div>
+        <button class="dropdown-item text-danger" (click)="logout()">Logout</button>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- Last Updated -->
+  <div class="mb-3">
+    <p class="mb-0">Updated: {{ loginTime }}</p>
+    <p class="mb-0">Next Update: {{ nextUpdateTime }}</p>
+  </div>
+
+
+  <div class="row g-3 mb-4">
+    <!-- Resources Card -->
+    <div class="col-lg-3 ">
+      <div class="card" style="background-color: transparent ; border: 0;">
+        <div class="card-body bg-white rounded-4 my-2 mt-0 shadow-lg">
+          <h1 class="card-title mb-0">25</h1>
+          <p class="card-text">Resources</p>
+        </div>
+        <div class="card-body bg-white rounded-4 shadow-lg ">
+          <h1 class="card-title mb-0">12</h1>
+          <p class="card-text ">Policies</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Policy Checks Card -->
+    <div class="col-lg-3">
+      <div class="card h-100 rounded-4 border-0 shadow-lg">
+        <div class="card-body">
+          <h1 class="card-title mb-0">47</h1>
+          <p class="card-text">Policy Checks</p>
+          <div class="mt-2">
+            <div class="d-flex align-items-center mb-1">
+              <span class="status-indicator status-red"></span>
+              <span>13 not compliant</span>
+            </div>
+            <div class="d-flex align-items-center mb-1">
+              <span class="status-indicator status-yellow"></span>
+              <span>0 partially compliant</span>
+            </div>
+            <div class="d-flex align-items-center">
+              <span class="status-indicator status-green"></span>
+              <span>34 compliant</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SSL Certificate Checks Card -->
+    <div class="col-lg-3">
+      <div class="card h-100 rounded-4 border-0 shadow-lg">
+        <div class="card-body">
+          <h1 class="card-title mb-0">0</h1>
+          <p class="card-text">SSL Certificate Checks</p>
+          <div class="mt-2">
+            <div class="d-flex align-items-center mb-1">
+              <span class="status-indicator status-red"></span>
+              <span>0 expired</span>
+            </div>
+            <div class="d-flex align-items-center mb-1">
+              <span class="status-indicator status-yellow"></span>
+              <span>0 expiring soon</span>
+            </div>
+            <div class="d-flex align-items-center">
+              <span class="status-indicator status-green"></span>
+              <span>0 active</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TLS Version Checks Card -->
+    <div class="col-lg-3">
+      <div class="card h-100 rounded-4 border-0 shadow-lg">
+        <div class="card-body">
+          <h1 class="card-title mb-0">1</h1>
+          <p class="card-text">TLS Version Checks</p>
+          <div class="mt-2">
+            <div class="d-flex align-items-center mb-1">
+              <span class="status-indicator status-red"></span>
+              <span>0 deprecated</span>
+            </div>
+            <div class="d-flex align-items-center">
+              <span class="status-indicator status-green"></span>
+              <span>1 valid</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row gap-0 g-3">
+    <div class="col-lg-5 py-2 "
+      style="height: 500px ; overflow-y: auto; scrollbar-width:thin; background-color: transparent;">
+      <div class="mb-4">
+        <div class="card mb-3 shadow-sm border-0 rounded-4">
+          <div class="card-body">
+            <div class="d-flex align-items-center mb-2">
+              <img src="/assets/images/aws.png" style="object-fit: contain;" alt="AWS" class="framework-icon me-2">
+              <h6 class="mb-0">AWS Best Practices</h6>
+              <span class="ms-2 text-muted">10 Resources | 10 Checks</span>
+            </div>
+            <div class="progress">
+              <div class="progress-bar bg-success" role="progressbar" style="width: 70%" aria-valuenow="70"
+                aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar bg-danger" role="progressbar" style="width: 30%" aria-valuenow="30"
+                aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3  shadow-sm border-0 rounded-4">
+          <div class="card-body">
+            <div class="d-flex align-items-center mb-2">
+              <img src="/assets/images/aws.png" style="object-fit: contain;" alt="AWS" class="framework-icon me-2">
+              <h6 class="mb-0">AWS Best Practices</h6>
+              <span class="ms-2 text-muted">10 Resources | 10 Checks</span>
+            </div>
+            <div class="progress">
+              <div class="progress-bar bg-success" role="progressbar" style="width: 70%" aria-valuenow="70"
+                aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar bg-danger" role="progressbar" style="width: 30%" aria-valuenow="30"
+                aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3  shadow-sm border-0 rounded-4">
+          <div class="card-body">
+            <div class="d-flex align-items-center mb-2">
+              <img src="/assets/images/aws.png" style="object-fit: contain;" alt="AWS" class="framework-icon me-2">
+              <h6 class="mb-0">AWS Best Practices</h6>
+              <span class="ms-2 text-muted">10 Resources | 10 Checks</span>
+            </div>
+            <div class="progress">
+              <div class="progress-bar bg-success" role="progressbar" style="width: 70%" aria-valuenow="70"
+                aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar bg-danger" role="progressbar" style="width: 30%" aria-valuenow="30"
+                aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3  shadow-sm border-0 rounded-4">
+          <div class="card-body">
+            <div class="d-flex align-items-center mb-2">
+              <img src="/assets/images/aws.png" style="object-fit: contain;" alt="AWS" class="framework-icon me-2">
+              <h6 class="mb-0">AWS Best Practices</h6>
+              <span class="ms-2 text-muted">10 Resources | 10 Checks</span>
+            </div>
+            <div class="progress">
+              <div class="progress-bar bg-success" role="progressbar" style="width: 70%" aria-valuenow="70"
+                aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar bg-danger" role="progressbar" style="width: 30%" aria-valuenow="30"
+                aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3  shadow-sm border-0 rounded-4">
+          <div class="card-body">
+            <div class="d-flex align-items-center mb-2">
+              <img src="/assets/images/aws.png" style="object-fit: contain;" alt="AWS" class="framework-icon me-2">
+              <h6 class="mb-0">AWS Best Practices</h6>
+              <span class="ms-2 text-muted">10 Resources | 10 Checks</span>
+            </div>
+            <div class="progress">
+              <div class="progress-bar bg-success" role="progressbar" style="width: 70%" aria-valuenow="70"
+                aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar bg-danger" role="progressbar" style="width: 30%" aria-valuenow="30"
+                aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3  shadow-sm border-0 rounded-4">
+          <div class="card-body">
+            <div class="d-flex align-items-center mb-2">
+              <img src="/assets/images/aws.png" style="object-fit: contain;" alt="AWS" class="framework-icon me-2">
+              <h6 class="mb-0">AWS Best Practices</h6>
+              <span class="ms-2 text-muted">10 Resources | 10 Checks</span>
+            </div>
+            <div class="progress">
+              <div class="progress-bar bg-success" role="progressbar" style="width: 70%" aria-valuenow="70"
+                aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar bg-danger" role="progressbar" style="width: 30%" aria-valuenow="30"
+                aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3  shadow-sm border-0 rounded-4">
+          <div class="card-body">
+            <div class="d-flex align-items-center mb-2">
+              <img src="/assets/images/aws.png" style="object-fit: contain;" alt="AWS" class="framework-icon me-2">
+              <h6 class="mb-0">AWS Best Practices</h6>
+              <span class="ms-2 text-muted">10 Resources | 10 Checks</span>
+            </div>
+            <div class="progress">
+              <div class="progress-bar bg-success" role="progressbar" style="width: 70%" aria-valuenow="70"
+                aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar bg-danger" role="progressbar" style="width: 30%" aria-valuenow="30"
+                aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- GDPR -->
+        <div class="card mb-3 shadow-sm border-0 rounded-4">
+          <div class="card-body">
+            <div class="d-flex align-items-center mb-2">
+              <img src="/assets/images/gdpr.jpg" style="object-fit: contain;" alt="AWS" class="framework-icon me-2 ">
+              <h6 class="mb-0">GDPR</h6>
+              <span class="ms-2 text-muted">1 Resources | 1 Checks</span>
+            </div>
+            <div class="progress">
+              <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100"
+                aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- HIPAA -->
+        <div class="card mb-3  shadow-sm border-0 rounded-4">
+          <div class="card-body ">
+            <div class="d-flex align-items-center mb-2">
+              <img src="/assets/images/images.jpg" style="object-fit: contain;" alt="AWS" class="framework-icon me-2 ">
+              <h6 class="mb-0">HIPAA</h6>
+              <span class="ms-2 text-muted">5 Resources | 7 Checks</span>
+            </div>
+            <div class="progress">
+              <div class="progress-bar bg-success" role="progressbar" style="width: 60%" aria-valuenow="60"
+                aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar bg-danger" role="progressbar" style="width: 40%" aria-valuenow="40"
+                aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ISO 20001 -->
+        <div class="card mb-3  shadow-sm border-0 rounded-4">
+          <div class="card-body">
+            <div class="d-flex align-items-center mb-2">
+              <img src="/assets/images/iso.avif" style="object-fit: contain;" alt="AWS" class="framework-icon me-2 ">
+              <h6 class="mb-0">ISO 20001</h6>
+              <span class="ms-2 text-muted">11 Resources | 21 Checks</span>
+            </div>
+            <div class="progress">
+              <div class="progress-bar bg-success" role="progressbar" style="width: 85%" aria-valuenow="85"
+                aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar bg-danger" role="progressbar" style="width: 15%" aria-valuenow="15"
+                aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ISO 27001 -->
+        <div class="card mb-3  shadow-sm border-0 rounded-4">
+          <div class="card-body">
+            <div class="d-flex align-items-center mb-2">
+              <img src="/assets/images/iso.avif" style="object-fit: contain;" alt="AWS" class="framework-icon me-2 ">
+              <h6 class="mb-0">ISO 20001</h6>
+              <span class="ms-2 text-muted">2 Resources | 4 Checks</span>
+            </div>
+            <div class="progress">
+              <div class="progress-bar bg-success" role="progressbar" style="width: 90%" aria-valuenow="90"
+                aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar bg-danger" role="progressbar" style="width: 10%" aria-valuenow="10"
+                aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-7">
+      <div class="card rounded-4 shadow-lg " style="height: 500px;">
+        <div class="card-body d-flex flex-column ">
+          <div class="copilot-header ">
+            <div class="content d-flex w-100 align-items-center"> <i class="bi bi-robot copilot-icon fs-4"><i
+                  class="fa-solid fa-wand-sparkles"></i></i>
+              <h5 class="mb-0">Cloud Copilot</h5>
+              <div class="ms-auto "><i class="fa-solid fa-up-right-and-down-left-from-center"></i></div>
+            </div>
+
+          </div>
+
+          <div class="prompt-suggestions-container w-100 ">
+            <p class="mb-3">Prompt Suggestions</p>
+
+            <div class="prompt-suggestion">
+              How many resources and checks are relevant to each standard framework?
+            </div>
+
+            <div class="prompt-suggestion">
+              Show me the monthly compliance trend for my cloud resources.
+            </div>
+
+            <div class="prompt-suggestion">
+              How many policies are relevant to my resources?
+            </div>
+          </div>
+
+          <!--input copilot -->
+          <div class="d-flex mt-auto ">
+            <input type="text" class="form-control me-3 shadow-sm border" placeholder="Message cloud copilot">
+            <button class="btn border-0 shadow"><i class="fa-solid fa-paper-plane"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

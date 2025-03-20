@@ -1,0 +1,30 @@
+/* .collapsed {
+    width: 80px !important;
+  }
+   */
+.collapsed .nav-link span {
+  display: none;
+}
+
+
+.nav-link {
+  color: #333;
+  transition: 0.3s;
+}
+
+.nav-link.active,
+.nav-link:hover {
+  background: linear-gradient(90deg, #6f42c1, #6f42c1);
+  color: #fff !important;
+}
+
+i {
+  font-size: 16px;
+}
+
+.sliebar.collapsed {
+  width: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+}
+  

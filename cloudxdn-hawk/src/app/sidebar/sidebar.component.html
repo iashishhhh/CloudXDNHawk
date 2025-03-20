@@ -1,0 +1,68 @@
+<div class="d-flex ">
+
+  <div class="d-flex flex-column flex-shrink-0 p-3 shadow border-end h-auto sliebar"
+    [ngClass]="{'collapsed': isCollapsed}" [style.width]="isCollapsed ? '0px' : '250px'"
+    style="overflow: hidden; transition: all 0.3s ease;">
+
+    <div class="d-flex justify-content-between align-items-center mb-4 border-bottom pb-2">
+      <div class="cloud" *ngIf="!isCollapsed">
+        <h5 class="mb-0 fw-bold">CloudXDN</h5>
+        <small class="text-muted">Hawk</small>
+      </div>
+    </div>
+
+    <ul class="nav nav-pills flex-column gap-2">
+      <li class="nav-item" type="button" routerlink="/sidebar/overview">
+        <a class="nav-link d-flex align-items-center" [ngClass]="{'active': activeItem === 'overview'}"
+          (click)="setActive('overview')">
+          <i class="fa-solid fa-bars-staggered me-2"></i><span *ngIf="!isCollapsed">Overview</span>
+        </a>
+      </li>
+      <li class="nav-item" type="button" routerlink="/login">
+        <a class="nav-link d-flex align-items-center" [ngClass]="{'active': activeItem === 'policies'}"
+          (click)="setActive('policies')">
+          <i class="fa-solid fa-shield-halved me-2"></i> <span *ngIf="!isCollapsed">Policies</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link d-flex align-items-center" [ngClass]="{'active': activeItem === 'policyCheck'}"
+          (click)="setActive('policyCheck')" href="#">
+          <i class="fa-solid fa-person-circle-check me-2"></i> <span *ngIf="!isCollapsed">Policy Check</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link d-flex align-items-center" [ngClass]="{'active': activeItem === 'codeScanner'}"
+          (click)="setActive('codeScanner')" href="#">
+          <i class="fa-solid fa-code me-2"></i> <span *ngIf="!isCollapsed">Code Scanner</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link d-flex align-items-center" [ngClass]="{'active': activeItem === 'compliance'}"
+          (click)="setActive('compliance')" href="#">
+          <i class="fa-solid fa-check-to-slot me-2"></i> <span *ngIf="!isCollapsed">Compliance</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link d-flex align-items-center" [ngClass]="{'active': activeItem === 'integrations'}"
+          (click)="setActive('integrations')" href="#">
+          <i class="fa-solid fa-grip me-2"></i> <span *ngIf="!isCollapsed">Integrations</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link d-flex align-items-center" [ngClass]="{'active': activeItem === 'codeScanning'}"
+          (click)="setActive('codeScanning')" href="#">
+          <i class="fa-solid fa-code me-2"></i> <span *ngIf="!isCollapsed">Code Scanning</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Main Content Area -->
+  <div class="flex-grow-1 p-4 ">
+    <button class="btn btn-sm btn-outline-secondary ms-2 rounded-circle " style="height:40px ; width: 40px;"
+      (click)="toggleSidebar()">
+      <i class="fs-4 fa-solid" [ngClass]="{'fa-arrow-left': !isCollapsed, 'fa-arrow-right': isCollapsed}"></i>
+    </button>
+    <router-outlet></router-outlet>
+  </div>
+</div>

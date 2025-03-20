@@ -1,0 +1,94 @@
+<section class="h-100 d-flex " style="background-color: #f0f0f0;">
+  <div class="container d-flex justify-content-center align-items-center h-100 pt-lg-4 ">
+    <div class="row align-items-center">
+      <div class="col-lg-6 col-md-12 illustration d-none d-md-block">
+        <img src="/assets/images/login.png" alt="Illustration" class="img-fluid mb-3">
+      </div>
+      <div class="col-lg-6 col-md-12 ">
+        <div class="form-container  shadow-lg rounded-4 px-3">
+          <form [formGroup]="signupForm" (ngSubmit)="onSignup()">
+
+            <div class="row">
+              <div class="col-lg-6 mb-3">
+                <label class="form-label">Name *</label>
+                <input type="text" class="form-control" formControlName="name">
+                <div class="text-danger" *ngIf="signupForm.get('name')?.invalid && signupForm.get('name')?.touched">
+                  Name is required
+                </div>
+              </div>
+              <div class="col-lg-6 mb-3">
+                <label class="form-label">Phone Number *</label>
+                <input type="tel" class="form-control" formControlName="phone">
+                <div class="text-danger" *ngIf="signupForm.get('phone')?.invalid && signupForm.get('phone')?.touched">
+                  Enter valid 10 digit phone number
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Company Name *</label>
+              <input type="text" class="form-control" formControlName="companyName">
+              <div class="text-danger"
+                *ngIf="signupForm.get('companyName')?.invalid && signupForm.get('companyName')?.touched">
+                Company Name is required
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Company Email *</label>
+              <input type="email" class="form-control" formControlName="email">
+              <div class="text-danger" *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched">
+                Enter valid company email
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Confirm Company Email *</label>
+              <input type="email" class="form-control" formControlName="confirmEmail">
+              <div class="text-danger"
+                *ngIf="signupForm.hasError('emailMismatch') && signupForm.get('confirmEmail')?.touched">
+                Emails do not match
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Password *</label>
+              <input type="password" class="form-control" formControlName="password">
+              <div class="text-danger"
+                *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched">
+                Min 6 chars, 1 number & 1 special character
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Confirm Password *</label>
+              <input type="password" class="form-control" formControlName="confirmPassword">
+              <div class="text-danger"
+                *ngIf="signupForm.hasError('passwordMismatch') && signupForm.get('confirmPassword')?.touched">
+                Passwords do not match
+              </div>
+            </div>
+
+            <div class="form-check mb-3">
+              <input type="checkbox" class="form-check-input" formControlName="terms">
+              <label class="form-check-label">
+                <div>Terms & Conditions</div>
+
+                I agree to CloudXDN's <a href="#">terms & conditions</a> and <a href="#">privacy policy</a>.
+              </label>
+              <div class="text-danger" *ngIf="signupForm.get('terms')?.invalid && signupForm.get('terms')?.touched">
+                You must accept terms
+              </div>
+            </div>
+
+            <button type="submit" [disabled]="signupForm.invalid" class="py-2 border-0 rounded w-100">Sign Up</button>
+          </form>
+          <p class="text-center mt-3">Already have an account?<!-- ...existing code... -->
+            <a [routerLink]="['/login']">Login</a>
+            <!-- ...existing code... -->
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

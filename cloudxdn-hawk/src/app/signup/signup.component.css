@@ -1,0 +1,16 @@
+.form-container {
+    height: 100%;
+    background-color: #f0f0f0;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.illustration {
+    text-align: center;
+}
+
+button {
+    background-color: #573695;
+    color: white;
+
+}

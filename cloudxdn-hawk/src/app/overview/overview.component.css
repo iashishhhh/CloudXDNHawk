@@ -1,0 +1,174 @@
+.framework-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.prompt-suggestion {
+  background: linear-gradient(to right, #7952b3, #5e3d94c7, #392657);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  width: max-content;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.prompt-suggestions-container {
+  /* background-color: #f8f9fa; */
+  overflow: auto;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.copilot-header {
+  margin-bottom: 16px;
+}
+
+.copilot-icon {
+  margin-right: 8px;
+  color: #7952b3;
+}
+
+.expand-icon {
+  float: right;
+}
+
+.btn {
+  background: linear-gradient(to bottom, #7952b3, #5e3d94, #2a2a2a);
+  color: white;
+
+}
+
+.progress {
+  height: 8px;
+}
+
+.status-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.status-red {
+  background-color: #dc3545;
+}
+
+.status-yellow {
+  background-color: #ffc107;
+}
+
+.status-green {
+  background-color: #28a745;
+}
+
+
+/* dropdown.component.css */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 1000;
+  padding: 0.5rem 0;
+  margin: 0.125rem 0 0;
+  font-size: 1rem;
+  color: #212529;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .175);
+}
+
+#dropdown-menu {
+  width: 100%;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+.dropdown-item {
+  padding: 0.25rem 1rem;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+}
+
+.dropdown-item:hover {
+  background-color: #f8f9fa;
+}
+
+.pro-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background: #5e3d94;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.pro-btn span {
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.pro-btn i {
+  z-index: 2;
+  font-size: 0.95rem;
+  transition: transform 0.3s ease;
+}
+
+/* Ripple Animation */
+.pro-btn::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.15);
+  transition: width 0.4s ease;
+  z-index: 1;
+}
+
+/* Hover State */
+.pro-btn:hover::before {
+  width: 120%;
+}
+
+.pro-btn:hover {
+  background: #4338ca;
+  /* darker shade */
+  box-shadow: 0 6px 18px rgba(79, 70, 229, 0.3);
+}
+
+.pro-btn:hover i {
+  transform: translateX(4px);
+}
+
+.pro-btn:active {
+  transform: scale(0.98);
+}
